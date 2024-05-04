@@ -49,7 +49,7 @@ function SignIn() {
   const handleLogin = async (datas) => {
   
     try {
-      const {data}= await axios.post("http://localhost:8000/admin/login",datas);
+      const {data}= await axios.post("https://explory.vercel.app/admin/login",datas);
       console.log("Response",data.user);
       const token = data.token;
       console.log("Token",data);
