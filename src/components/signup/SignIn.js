@@ -50,6 +50,7 @@ function SignIn() {
   
     try {
       const {data}= await axios.get("https://2836-20-222-181-32.ngrok-free.app/admin/login",datas);
+      console.log("Res","https://2836-20-222-181-32.ngrok-free.app/admin/login");
       console.log("Response",data.user);
       const token = data.token;
       console.log("Token",data);
