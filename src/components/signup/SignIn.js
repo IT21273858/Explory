@@ -49,8 +49,7 @@ function SignIn() {
   const handleLogin = async (datas) => {
   
     try {
-      const {data}= await axios.get("https://2836-20-222-181-32.ngrok-free.app/admin/login",datas);
-      console.log("Res","https://2836-20-222-181-32.ngrok-free.app/admin/login");
+      const {data}= await axios.get("https://explory-back-v2.onrender.com/admin/login",datas);
       console.log("Response",data.user);
       const token = data.token;
       console.log("Token",data);

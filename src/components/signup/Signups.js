@@ -56,7 +56,7 @@ function Signups() {
   const handleSignup = async (datas) => {
 
     try {
-      const { data } = await axios.post("https://2836-20-222-181-32.ngrok-free.app/admin/create", datas);
+      const { data } = await axios.post("https://explory-back-v2.onrender.com/admin/create", datas);
 
       if (data.status === true) {
         Toast.fire({
