@@ -49,7 +49,7 @@ function SignIn() {
   const handleLogin = async (datas) => {
   
     try {
-      const {data}= await axios.get("https://explory-back-v2.onrender.com/admin/login",datas);
+      const {data}= await axios.post("https://explory-back-v2.onrender.com/admin/login",datas);
       console.log("Response",data.user);
       const token = data.token;
       console.log("Token",data);
