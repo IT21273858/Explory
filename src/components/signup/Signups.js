@@ -56,7 +56,7 @@ function Signups() {
   const handleSignup = async (datas) => {
 
     try {
-      const { data } = await axios.post("https://explory.vercel.app/admin/create", datas);
+      const { data } = await axios.post("http://20.222.181.32:8080/admin/create", datas);
 
       if (data.status === true) {
         Toast.fire({

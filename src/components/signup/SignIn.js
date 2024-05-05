@@ -49,7 +49,7 @@ function SignIn() {
   const handleLogin = async (datas) => {
   
     try {
-      const {data}= await axios.get("https://explory.vercel.app/admin/login",datas);
+      const {data}= await axios.get("http://20.222.181.32:8080/admin/login",datas);
       console.log("Response",data.user);
       const token = data.token;
       console.log("Token",data);
