@@ -15,7 +15,7 @@ const Neo = (props) => {
       <div className="row justify-content-center mt-3">
         <table
           align="center"
-          className="table table-dark table-responsive table-responsive-sm mx-auto rounded-2xl"
+          className="table table-dark border-none bg-sky-800 table-responsive table-responsive-sm mx-auto rounded-2xl"
         >
           <thead align="center">
             <tr>

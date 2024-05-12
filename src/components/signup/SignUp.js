@@ -12,7 +12,7 @@ export default function SignUp() {
     }
   };
   const containerClass =
-    "containers " + (type === "signUp" ? "right-panel-active" : "");
+    " containers" + (type === "signUp" ? "right-panel-active" : "");
   return (
     <div className="SignUp">
       <h2>Sign in/up Form</h2>

@@ -14,13 +14,13 @@ const Neos = () => {
   const [loading, setLoading] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  const [date,setDate] = useState();
+  const [date, setDate] = useState();
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log("Neo api",process.env.REACT_APP_NEOS_API);
-        
-        let startfullDate = Datetime(startDate)   
+        console.log("Neo api", process.env.REACT_APP_NEOS_API);
+
+        let startfullDate = Datetime(startDate)
         let endfullDate = Datetime(endDate)
         setDate(startfullDate)
         const api =
@@ -31,8 +31,8 @@ const Neos = () => {
           endfullDate +
           "&api_key=" +
           process.env.REACT_APP_API_KEY;
-          console.log("NEOS",api);
-          // console.log("Start and end",formattedStartDate ,"-",formattedEndDate);
+        console.log("NEOS", api);
+        // console.log("Start and end",formattedStartDate ,"-",formattedEndDate);
         setLoading(true);
         const tempData = await axios.get(api);
         setData(tempData.data);
@@ -64,9 +64,9 @@ const Neos = () => {
 
           <div className="d-flex justify-content-center">
             <div className="m-2">
-              <label htmlFor="start-date">Start Date:</label>
+              <label htmlFor="start-date" className="text-[#341515]">Start Date 📆:</label>
               <DatePicker
-                className=" bg-slate-500 h-10 rounded-full"
+                className=" bg-slate-500 h-8 rounded-full"
                 id="start-date"
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
@@ -74,10 +74,10 @@ const Neos = () => {
               />
             </div>
             <div className="m-2">
-              <label htmlFor="end-date">End Date:</label>
+              <label htmlFor="end-date" className="text-[#341515]">End Date 📆:</label>
               <DatePicker
                 id="end-date"
-                className=" bg-slate-500 h-10 rounded-full"
+                className=" bg-slate-500 h-8 rounded-full"
                 selected={endDate}
                 onChange={(date) => setEndDate(date)}
                 minDate={startDate.getTime() - 7 * 24 * 60 * 60 * 1000}
@@ -87,15 +87,13 @@ const Neos = () => {
             </div>
           </div>
 
-
-
           <span align="center">
-            <h5>Recorded on: {date}</h5>
-            <h5>By: NASA</h5>
+            <h5 className="text-[#252424] text-[18px]">Recorded on: {date}</h5>
+            <h5 className="text-[#484444] text-[16px]">By: NASA</h5>
           </span>
 
           {/* FOR Medium / Large Screens ONLY */}
-          <p align="right" className="d-none d-md-block">
+          <p align="right" className="d-none d-md-block font-semibold text-gray-100">
             Total Number of Objects : {data && data.element_count}
           </p>
           {/* FOR Small Screens ONLY */}
@@ -103,10 +101,10 @@ const Neos = () => {
             Total Number of Objects : {data && data.element_count}
           </p>
           {
-           
-            data&&
+
+            data &&
             <Neo stateData={data} date={date} />
-           
+
           }
         </div>
       )}
