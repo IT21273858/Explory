@@ -14,7 +14,9 @@ const ApodComp = (apodData) => {
         />
       </div>
       <div className="col-lg-6 col-sm-12 table-responsive rounded-2xl">
-        <table className="table table-dark rounded-2xl bg-stone-800 ">
+        <table
+        style={{ backgroundColor: "rgb(0,0,0,0.7)" }}
+        className="table table-dark rounded-2xl bg-stone-800 ">
           <tbody>
             <tr>
               <td className="font-serif text-lg">Title:</td>
